@@ -40,34 +40,7 @@ window.addEventListener('scroll', () => {
 });
 
 // ============================================================
-// 3. ANIMACIÓN DE NÚMEROS (estadísticas)
-// ============================================================
-const statNumbers = document.querySelectorAll('.stat-number');
-
-function animateNumbers() {
-    statNumbers.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-count'));
-        const duration = 2000;
-        const step = Math.max(1, Math.floor(target / 60));
-        let current = 0;
-
-        const updateNumber = () => {
-            current += step;
-            if (current >= target) {
-                stat.textContent = target;
-                return;
-            }
-            stat.textContent = current;
-            requestAnimationFrame(() => {
-                setTimeout(updateNumber, 30);
-            });
-        };
-        updateNumber();
-    });
-}
-
-// ============================================================
-// 4. INTERSECTION OBSERVER (animaciones al hacer scroll)
+// 3. INTERSECTION OBSERVER (animaciones al hacer scroll)
 // ============================================================
 const observerOptions = {
     threshold: 0.15,
@@ -84,11 +57,6 @@ const observer = new IntersectionObserver((entries) => {
                     item.classList.add('visible');
                 }, index * 80);
             });
-
-            // Animación de números si es la sección hero
-            if (entry.target.id === 'inicio') {
-                animateNumbers();
-            }
         }
     });
 }, observerOptions);
@@ -99,7 +67,7 @@ document.querySelectorAll('section').forEach(section => {
 });
 
 // ============================================================
-// 5. GALERÍA DE FOTOS (grid + lightbox)
+// 4. GALERÍA DE FOTOS (grid + lightbox)
 // ============================================================
 const gridFotos = document.getElementById('gridFotos');
 const lightbox = document.getElementById('lightbox');
@@ -133,7 +101,7 @@ function renderGaleria() {
 }
 
 // ============================================================
-// 6. LIGHTBOX
+// 5. LIGHTBOX
 // ============================================================
 function openLightbox(index) {
     currentIndex = index;
@@ -184,15 +152,38 @@ lightbox.addEventListener('click', (e) => {
 });
 
 // ============================================================
+// 6. EFECTO DE CUERDAS DEL BAJO (vibración continua)
+// ============================================================
+function iniciarVibracionBajo() {
+    const cuerdas = document.querySelectorAll('.bajo-cuerda');
+    cuerdas.forEach((cuerda, index) => {
+        // Cada cuerda tiene una vibración ligeramente diferente
+        const delay = index * 0.15;
+        const duration = 0.6 + Math.random() * 0.4;
+        cuerda.style.animationDelay = `${delay}s`;
+        cuerda.style.animationDuration = `${duration}s`;
+
+        // Cambiar la intensidad de vibración aleatoriamente
+        setInterval(() => {
+            const intensidad = 1 + Math.random() * 1.5;
+            const desplazamiento = 2 + Math.random() * 4;
+            cuerda.style.setProperty('--intensidad', intensidad);
+            cuerda.style.setProperty('--desplazamiento', `${desplazamiento}px`);
+        }, 2000 + Math.random() * 3000);
+    });
+}
+
+// ============================================================
 // 7. INICIALIZAR
 // ============================================================
 renderGaleria();
 
-// Animar números al cargar si el hero es visible
-setTimeout(() => {
-    const hero = document.getElementById('inicio');
-    const rect = hero.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-        animateNumbers();
-    }
-}, 500);
+// Iniciar vibración del bajo cuando la página cargue
+document.addEventListener('DOMContentLoaded', () => {
+    iniciarVibracionBajo();
+});
+
+// También reiniciar si hay cambios dinámicos
+window.addEventListener('load', () => {
+    iniciarVibracionBajo();
+});

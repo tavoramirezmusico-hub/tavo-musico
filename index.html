@@ -1,197 +1,76 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TAVOMUSICO · Multiinstrumentista</title>
-    <link rel="icon" href="img/logo.webp" type="image/webp" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <!-- Font Awesome para iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-</head>
-
-<body>
-
-    <!-- ==================== MENÚ HAMBURGUESA ==================== -->
-    <header class="header" id="header">
-        <div class="container header-container">
-            <div class="logo">
-                <img src="img/logo.webp" alt="TAVOMUSICO Logo" class="logo-img" />
-                <span class="logo-text">TAVOMUSICO</span>
-            </div>
-            <nav class="nav" id="nav">
-                <ul class="nav-list">
-                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="#biografia" class="nav-link">Biografía</a></li>
-                    <li><a href="#fotos" class="nav-link">Fotos</a></li>
-                    <li><a href="#videos" class="nav-link">Videos</a></li>
-                    <li><a href="#soundcloud" class="nav-link">SoundCloud</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </header>
-
-    <!-- ==================== INICIO / HERO ==================== -->
-    <section id="inicio" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-container">
-            <div class="hero-content">
-                <img src="img/logo.webp" alt="TAVOMUSICO" class="hero-logo" />
-                <h1 class="hero-title">TAVOMUSICO</h1>
-                <p class="hero-subtitle">Multiinstrumentista · Cantante · Amante de la Tecnología</p>
-                <div class="hero-buttons">
-                    <a href="mailto:tavoramirezmusico@gmail.com" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i> Correo
-                    </a>
-                    <a href="https://wa.me/50671012511" target="_blank" class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
+<!-- ==================== BIOGRAFÍA ==================== -->
+<section id="biografia" class="biografia">
+    <div class="container">
+        <h2 class="section-title">Biografía</h2>
+        <div class="bio-grid">
+            <div class="bio-text">
+                <p>
+                    <strong>Tavo Músico</strong> es un multiinstrumentista, cantante y compositor costarricense cuya
+                    trayectoria artística se ha desarrollado en diversos escenarios de Costa Rica y Centroamérica. A lo
+                    largo de los años ha participado en proyectos de diferentes géneros musicales, destacándose por su
+                    versatilidad, experiencia escénica y pasión por la música.
+                </p>
+                <p>
+                    Su formación musical incluye su paso por <strong>UCR Coral</strong>, donde integró la agrupación
+                    como cantante barítono, fortaleciendo sus conocimientos en interpretación vocal y trabajo coral.
+                </p>
+                <p>
+                    Posteriormente formó parte de la banda <strong>Cuerda Floja</strong> como bajista, consolidando su
+                    experiencia en el escenario y participando en diversas presentaciones. Más adelante amplió su
+                    repertorio como <strong>multiinstrumentista</strong> en <strong>Tributo Acústico</strong>, proyecto
+                    en el que interpretó distintos instrumentos en formato acústico.
+                </p>
+                <p>
+                    Actualmente es bajista de las agrupaciones <strong>Los Hijos de Tencha</strong> y <strong>San Blas
+                        Punk Rock</strong>, combinando la energía de la cumbia y el punk rock con una propuesta musical
+                    auténtica. Además, participa en eventos privados como bajista, guitarrista y cantante, ofreciendo un
+                    repertorio adaptable a diferentes públicos y ocasiones.
+                </p>
+                <p>
+                    Su vocación también lo ha llevado a la enseñanza musical. Fue director de la banda rítmica de la
+                    <strong>Escuela de La Laguna de Paraíso, Cartago</strong>, y profesor de instrumentos en la
+                    <strong>Casa de la Cultura de Purral de Goicoechea</strong>, donde contribuyó a la formación musical
+                    de niños, jóvenes y adultos.
+                </p>
+                <p>
+                    Además de su carrera artística, Tavo Músico une su pasión por la música con la tecnología. Se dedica
+                    al diseño y desarrollo de páginas web, así como al mantenimiento y reparación de equipos de cómputo,
+                    redes informáticas y sistemas de videovigilancia (CCTV), aplicando la misma dedicación y creatividad
+                    que caracterizan su trabajo como músico.
+                </p>
+                <p>
+                    Con una trayectoria marcada por la disciplina, el aprendizaje constante y el compromiso con cada
+                    proyecto, Tavo Músico continúa creando, interpretando y llevando su música a nuevos escenarios,
+                    mientras desarrolla soluciones tecnológicas que complementan su visión profesional.
+                </p>
+                <div class="bio-links">
+                    <a href="https://linktr.ee/tavoramirezmusico" target="_blank" class="btn-link">
+                        <i class="fas fa-link"></i> linktr.ee/tavoramirezmusico
                     </a>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number" data-count="1800">0</span>
-                        <span class="stat-label">Seguidores</span>
+            </div>
+            <div class="bio-bajo">
+                <!-- Animación de bajo eléctrico con CSS -->
+                <div class="bajo-animado">
+                    <div class="bajo-cuerpo">
+                        <div class="bajo-cuerda" style="animation-delay: 0s;"></div>
+                        <div class="bajo-cuerda" style="animation-delay: 0.15s;"></div>
+                        <div class="bajo-cuerda" style="animation-delay: 0.3s;"></div>
+                        <div class="bajo-cuerda" style="animation-delay: 0.45s;"></div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number" data-count="890">0</span>
-                        <span class="stat-label">Seguidos</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" data-count="9">0</span>
-                        <span class="stat-label">Proyectos</span>
+                    <div class="bajo-mastil"></div>
+                    <div class="bajo-cabeza"></div>
+                    <div class="bajo-puente"></div>
+                    <div class="bajo-pastilla"></div>
+                    <div class="bajo-notas">
+                        <span class="nota" style="animation-delay: 0.2s;">♪</span>
+                        <span class="nota" style="animation-delay: 0.8s;">♫</span>
+                        <span class="nota" style="animation-delay: 1.4s;">♪</span>
+                        <span class="nota" style="animation-delay: 2.0s;">♬</span>
                     </div>
                 </div>
+                <p class="bajo-leyenda">🎸 Bajo eléctrico · Mi instrumento principal</p>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-
-    <!-- ==================== BIOGRAFÍA ==================== -->
-    <section id="biografia" class="biografia">
-        <div class="container">
-            <h2 class="section-title">Biografía</h2>
-            <div class="bio-grid">
-                <div class="bio-text">
-                    <p>
-                        <strong>Tavo Músico</strong> es un multiinstrumentista, cantante y apasionado por la tecnología.
-                        Con más de <strong>1800 seguidores</strong> en redes, ha llevado su música a diversos escenarios
-                        y proyectos a lo largo de Costa Rica.
-                    </p>
-                    <p>
-                        Forma parte de agrupaciones como <strong>Los Hijos de Tencha</strong>, <strong>Tavola</strong>,
-                        <strong>Los Pibes Chorreros</strong>, <strong>BALAS EN EL AIRE</strong>,
-                        <strong>CAMBIA</strong>,
-                        <strong>REPUBLICA TRADICIÓN</strong> y <strong>FUSION LATINA</strong>, entre otros.
-                    </p>
-                    <p>
-                        Estudió en la <strong>Universidad de Costa Rica</strong> y combina su carrera musical con
-                        su amor por la tecnología, creando experiencias únicas en cada presentación.
-                    </p>
-                    <div class="bio-links">
-                        <a href="https://linktr.ee/tavoramirezmusico" target="_blank" class="btn-link">
-                            <i class="fas fa-link"></i> linktr.ee/tavoramirezmusico
-                        </a>
-                    </div>
-                </div>
-                <div class="bio-proyectos">
-                    <h3>Proyectos</h3>
-                    <ul class="proyectos-list">
-                        <li><i class="fas fa-music"></i> Los Hijos de Tencha</li>
-                        <li><i class="fas fa-music"></i> Tavola</li>
-                        <li><i class="fas fa-music"></i> Los Pibes Chorreros</li>
-                        <li><i class="fas fa-music"></i> BALAS EN EL AIRE</li>
-                        <li><i class="fas fa-music"></i> CAMBIA</li>
-                        <li><i class="fas fa-music"></i> REPUBLICA TRADICIÓN</li>
-                        <li><i class="fas fa-music"></i> FUSION LATINA</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== FOTOS ==================== -->
-    <section id="fotos" class="fotos">
-        <div class="container">
-            <h2 class="section-title">Galería</h2>
-            <p class="section-subtitle">Mis momentos sobre el escenario</p>
-            <div class="grid-fotos" id="gridFotos">
-                <!-- Generado con JS desde 1.webp a 9.webp -->
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== LIGHTBOX ==================== -->
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <img class="lightbox-img" id="lightboxImg" src="" alt="" />
-        <span class="lightbox-prev" id="lightboxPrev">&#10094;</span>
-        <span class="lightbox-next" id="lightboxNext">&#10095;</span>
     </div>
-
-    <!-- ==================== VIDEOS ==================== -->
-    <section id="videos" class="videos">
-        <div class="container">
-            <h2 class="section-title">Videos</h2>
-            <p class="section-subtitle">Próximamente más contenido audiovisual</p>
-            <div class="video-placeholder">
-                <i class="fas fa-video"></i>
-                <p>Espacio para tus videos y reels</p>
-                <span>¡Pronto más contenido!</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== SOUNDCLOUD ==================== -->
-    <section id="soundcloud" class="soundcloud">
-        <div class="container">
-            <h2 class="section-title">SoundCloud</h2>
-            <p class="section-subtitle">Escucha mi música</p>
-            <div class="soundcloud-wrapper">
-                <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
-                    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/tavoramirezmusico&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== CONTACTO ==================== -->
-    <section id="contacto" class="contacto">
-        <div class="container">
-            <h2 class="section-title">Contacto</h2>
-            <div class="contacto-grid">
-                <a href="mailto:tavoramirezmusico@gmail.com" class="contacto-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>tavoramirezmusico@gmail.com</span>
-                </a>
-                <a href="https://wa.me/50671012511" target="_blank" class="contacto-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>+506 7101-2511</span>
-                </a>
-                <a href="https://linktr.ee/tavoramirezmusico" target="_blank" class="contacto-item">
-                    <i class="fas fa-link"></i>
-                    <span>linktr.ee/tavoramirezmusico</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 TAVOMUSICO · Multiinstrumentista. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- ==================== SCRIPTS ==================== -->
-    <script src="js/script.js"></script>
-</body>
-
-</html>
+</section>
