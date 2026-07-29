@@ -1060,3 +1060,36 @@ section {
         font-size: 1rem;
     }
 }
+
+/* ===== SOUNDCLOUD BOTÓN ===== */
+.soundcloud-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, #ff5500, #ff7700);
+    color: #fff;
+    padding: 20px 40px;
+    border-radius: 60px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 30px rgba(255, 85, 0, 0.3);
+}
+
+.soundcloud-link:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 12px 40px rgba(255, 85, 0, 0.5);
+}
+
+.soundcloud-link i.fa-soundcloud {
+    font-size: 2.5rem;
+}
+
+.soundcloud-link i.fa-arrow-right {
+    transition: transform 0.3s ease;
+}
+
+.soundcloud-link:hover i.fa-arrow-right {
+    transform: translateX(8px);
+}
