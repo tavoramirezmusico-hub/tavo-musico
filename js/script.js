@@ -40,7 +40,43 @@ window.addEventListener('scroll', () => {
 });
 
 // ============================================================
-// 3. INTERSECTION OBSERVER (animaciones al hacer scroll)
+// 3. EFECTO DE ESCRITURA (typing effect)
+// ============================================================
+const typingText = document.querySelector('.typing-text');
+const words = ['Cantante · Bajista · Guitarrista', 'Multiinstrumentista', 'Amante de la Tecnología', 'Músico Costarricense'];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeEffect() {
+    const currentWord = words[wordIndex];
+
+    if (isDeleting) {
+        typingText.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typingText.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+    }
+
+    if (!isDeleting && charIndex === currentWord.length) {
+        setTimeout(() => { isDeleting = true; }, 2000);
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+    }
+
+    const speed = isDeleting ? 50 : 100;
+    setTimeout(typeEffect, speed);
+}
+
+// Iniciar typing effect al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(typeEffect, 500);
+});
+
+// ============================================================
+// 4. INTERSECTION OBSERVER (animaciones al hacer scroll)
 // ============================================================
 const observerOptions = {
     threshold: 0.15,
@@ -67,7 +103,7 @@ document.querySelectorAll('section').forEach(section => {
 });
 
 // ============================================================
-// 4. GALERÍA DE FOTOS (grid + lightbox)
+// 5. GALERÍA DE FOTOS (grid + lightbox)
 // ============================================================
 const gridFotos = document.getElementById('gridFotos');
 const lightbox = document.getElementById('lightbox');
@@ -101,7 +137,7 @@ function renderGaleria() {
 }
 
 // ============================================================
-// 5. LIGHTBOX
+// 6. LIGHTBOX
 // ============================================================
 function openLightbox(index) {
     currentIndex = index;
@@ -152,38 +188,6 @@ lightbox.addEventListener('click', (e) => {
 });
 
 // ============================================================
-// 6. EFECTO DE CUERDAS DEL BAJO (vibración continua)
-// ============================================================
-function iniciarVibracionBajo() {
-    const cuerdas = document.querySelectorAll('.bajo-cuerda');
-    cuerdas.forEach((cuerda, index) => {
-        // Cada cuerda tiene una vibración ligeramente diferente
-        const delay = index * 0.15;
-        const duration = 0.6 + Math.random() * 0.4;
-        cuerda.style.animationDelay = `${delay}s`;
-        cuerda.style.animationDuration = `${duration}s`;
-
-        // Cambiar la intensidad de vibración aleatoriamente
-        setInterval(() => {
-            const intensidad = 1 + Math.random() * 1.5;
-            const desplazamiento = 2 + Math.random() * 4;
-            cuerda.style.setProperty('--intensidad', intensidad);
-            cuerda.style.setProperty('--desplazamiento', `${desplazamiento}px`);
-        }, 2000 + Math.random() * 3000);
-    });
-}
-
-// ============================================================
 // 7. INICIALIZAR
 // ============================================================
 renderGaleria();
-
-// Iniciar vibración del bajo cuando la página cargue
-document.addEventListener('DOMContentLoaded', () => {
-    iniciarVibracionBajo();
-});
-
-// También reiniciar si hay cambios dinámicos
-window.addEventListener('load', () => {
-    iniciarVibracionBajo();
-});
