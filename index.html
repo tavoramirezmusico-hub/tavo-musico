@@ -4,361 +4,193 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TAVO MÚSICO · Multiinstrumentista</title>
-
-    <meta name="description"
-        content="TAVO MÚSICO · Multiinstrumentista costarricense. Rock, ska, cumbia, balada, reggae y charanga." />
-    <meta name="keywords" content="TAVO MÚSICO, multiinstrumentista, músico Costa Rica" />
-    <meta name="author" content="TAVO MÚSICO" />
-
-    <meta property="og:title" content="TAVO MÚSICO · Multiinstrumentista" />
-    <meta property="og:description" content="Música con alma. Rock, ska, cumbia, balada, reggae y charanga." />
-    <meta property="og:image" content="img/1.webp" />
-    <meta property="og:url" content="https://tavomusico.com" />
-
-    <link rel="icon" href="img/3.webp" type="image/webp" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600;700&display=swap"
-        rel="stylesheet" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <title>TAVOMUSICO · Multiinstrumentista</title>
+    <link rel="icon" href="img/logo.webp" type="image/webp" />
     <link rel="stylesheet" href="css/styles.css" />
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
 
-    <!-- ===== HEADER ===== -->
-    <header>
-        <div class="container">
+    <!-- ==================== MENÚ HAMBURGUESA ==================== -->
+    <header class="header" id="header">
+        <div class="container header-container">
             <div class="logo">
-                <img src="img/1.webp" alt="TAVO" />
-                <span>TAVO</span>
+                <img src="img/logo.webp" alt="TAVOMUSICO Logo" class="logo-img" />
+                <span class="logo-text">TAVOMUSICO</span>
             </div>
-
-            <nav>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#bio">Bio</a></li>
-                    <li><a href="#proyectos">Proyectos</a></li>
-                    <li><a href="#musica">Música</a></li>
-                    <li><a href="#shows">Shows</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#biografia" class="nav-link">Biografía</a></li>
+                    <li><a href="#fotos" class="nav-link">Fotos</a></li>
+                    <li><a href="#videos" class="nav-link">Videos</a></li>
+                    <li><a href="#soundcloud" class="nav-link">SoundCloud</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
-
-            <div class="social-header">
-                <a href="https://instagram.com/tavo_musico" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/share/1MJoyMrbpH/" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.tiktok.com/@tavo_musico" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://on.soundcloud.com/p37TMc0evhRzM6PEgi" target="_blank"><i
-                        class="fab fa-soundcloud"></i></a>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-
-            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
-    <!-- ===== HERO ===== -->
-    <section id="inicio" class="hero" style="background-image: url('img/1.webp');">
+    <!-- ==================== INICIO / HERO ==================== -->
+    <section id="inicio" class="hero">
         <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>TAVO <span>MÚSICO</span></h1>
-            <p class="subtitle">Multiinstrumentista · De todo un poco, con el alma en cada nota</p>
-            <div class="hero-buttons">
-                <a href="https://linktr.ee/tavoramirezmusico" target="_blank" class="btn btn-primary">
-                    <i class="fas fa-guitar"></i> Toda mi música
-                </a>
-                <a href="#proyectos" class="btn btn-secondary">
-                    <i class="fas fa-users"></i> Mis proyectos
-                </a>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <img src="img/logo.webp" alt="TAVOMUSICO" class="hero-logo" />
+                <h1 class="hero-title">TAVOMUSICO</h1>
+                <p class="hero-subtitle">Multiinstrumentista · Cantante · Amante de la Tecnología</p>
+                <div class="hero-buttons">
+                    <a href="mailto:tavoramirezmusico@gmail.com" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Correo
+                    </a>
+                    <a href="https://wa.me/50671012511" target="_blank" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-count="1800">0</span>
+                        <span class="stat-label">Seguidores</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="890">0</span>
+                        <span class="stat-label">Seguidos</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="9">0</span>
+                        <span class="stat-label">Proyectos</span>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="hero-scroll">
-            <span>Desplaza</span>
+        <div class="scroll-indicator">
             <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- ===== GALERÍA FULL (todas tus fotos) ===== -->
-    <section class="galeria-full">
-        <div class="galeria-grid">
-            <div class="galeria-item" style="background-image: url('img/2.webp');"></div>
-            <div class="galeria-item" style="background-image: url('img/3.webp');"></div>
-            <div class="galeria-item" style="background-image: url('img/4.webp');"></div>
-            <div class="galeria-item" style="background-image: url('img/5.webp');"></div>
-            <div class="galeria-item" style="background-image: url('img/6.webp');"></div>
-            <div class="galeria-item" style="background-image: url('img/7.webp');"></div>
-            <div class="galeria-item" style="background-image: url('img/8.webp');"></div>
-            <div class="galeria-item" style="background-image: url('img/9.webp');"></div>
-            <div class="galeria-item" style="background-image: url('img/1.webp');"></div>
+    <!-- ==================== BIOGRAFÍA ==================== -->
+    <section id="biografia" class="biografia">
+        <div class="container">
+            <h2 class="section-title">Biografía</h2>
+            <div class="bio-grid">
+                <div class="bio-text">
+                    <p>
+                        <strong>Tavo Músico</strong> es un multiinstrumentista, cantante y apasionado por la tecnología.
+                        Con más de <strong>1800 seguidores</strong> en redes, ha llevado su música a diversos escenarios
+                        y proyectos a lo largo de Costa Rica.
+                    </p>
+                    <p>
+                        Forma parte de agrupaciones como <strong>Los Hijos de Tencha</strong>, <strong>Tavola</strong>,
+                        <strong>Los Pibes Chorreros</strong>, <strong>BALAS EN EL AIRE</strong>,
+                        <strong>CAMBIA</strong>,
+                        <strong>REPUBLICA TRADICIÓN</strong> y <strong>FUSION LATINA</strong>, entre otros.
+                    </p>
+                    <p>
+                        Estudió en la <strong>Universidad de Costa Rica</strong> y combina su carrera musical con
+                        su amor por la tecnología, creando experiencias únicas en cada presentación.
+                    </p>
+                    <div class="bio-links">
+                        <a href="https://linktr.ee/tavoramirezmusico" target="_blank" class="btn-link">
+                            <i class="fas fa-link"></i> linktr.ee/tavoramirezmusico
+                        </a>
+                    </div>
+                </div>
+                <div class="bio-proyectos">
+                    <h3>Proyectos</h3>
+                    <ul class="proyectos-list">
+                        <li><i class="fas fa-music"></i> Los Hijos de Tencha</li>
+                        <li><i class="fas fa-music"></i> Tavola</li>
+                        <li><i class="fas fa-music"></i> Los Pibes Chorreros</li>
+                        <li><i class="fas fa-music"></i> BALAS EN EL AIRE</li>
+                        <li><i class="fas fa-music"></i> CAMBIA</li>
+                        <li><i class="fas fa-music"></i> REPUBLICA TRADICIÓN</li>
+                        <li><i class="fas fa-music"></i> FUSION LATINA</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- ===== BIO ===== -->
-    <section id="bio" class="bio" style="background-image: url('img/3.webp');">
-        <div class="bio-overlay"></div>
-        <div class="container bio-content">
-            <div class="bio-text">
-                <h2>Sobre Mí</h2>
-                <div class="section-line"></div>
-                <p class="bio-intro"><strong>TAVO MÚSICO</strong> · Multiinstrumentista costarricense con más de una
-                    década sobre los escenarios.</p>
-                <p><strong>Rock, ska, cumbia, balada, reggae y charanga</strong> se fusionan en un sonido único.
-                    Guitarra, bajo, teclados, batería y voz son su lenguaje.</p>
-                <p>Cada presentación es una experiencia visceral que conecta con el alma del público.</p>
-                <div class="bio-tags">
-                    <span class="tag">🎸 Rock</span>
-                    <span class="tag">🎺 Ska</span>
-                    <span class="tag">🕺 Cumbia</span>
-                    <span class="tag">🎵 Balada</span>
-                    <span class="tag">🌿 Reggae</span>
-                    <span class="tag">🎷 Charanga</span>
-                </div>
-                <a href="https://linktr.ee/tavoramirezmusico" target="_blank" class="btn btn-primary">
-                    <i class="fas fa-link"></i> Toda mi música
+    <!-- ==================== FOTOS ==================== -->
+    <section id="fotos" class="fotos">
+        <div class="container">
+            <h2 class="section-title">Galería</h2>
+            <p class="section-subtitle">Mis momentos sobre el escenario</p>
+            <div class="grid-fotos" id="gridFotos">
+                <!-- Generado con JS desde 1.webp a 9.webp -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LIGHTBOX ==================== -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightboxClose">&times;</span>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+        <span class="lightbox-prev" id="lightboxPrev">&#10094;</span>
+        <span class="lightbox-next" id="lightboxNext">&#10095;</span>
+    </div>
+
+    <!-- ==================== VIDEOS ==================== -->
+    <section id="videos" class="videos">
+        <div class="container">
+            <h2 class="section-title">Videos</h2>
+            <p class="section-subtitle">Próximamente más contenido audiovisual</p>
+            <div class="video-placeholder">
+                <i class="fas fa-video"></i>
+                <p>Espacio para tus videos y reels</p>
+                <span>¡Pronto más contenido!</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SOUNDCLOUD ==================== -->
+    <section id="soundcloud" class="soundcloud">
+        <div class="container">
+            <h2 class="section-title">SoundCloud</h2>
+            <p class="section-subtitle">Escucha mi música</p>
+            <div class="soundcloud-wrapper">
+                <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
+                    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/tavoramirezmusico&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACTO ==================== -->
+    <section id="contacto" class="contacto">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contacto-grid">
+                <a href="mailto:tavoramirezmusico@gmail.com" class="contacto-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>tavoramirezmusico@gmail.com</span>
+                </a>
+                <a href="https://wa.me/50671012511" target="_blank" class="contacto-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>+506 7101-2511</span>
+                </a>
+                <a href="https://linktr.ee/tavoramirezmusico" target="_blank" class="contacto-item">
+                    <i class="fas fa-link"></i>
+                    <span>linktr.ee/tavoramirezmusico</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ===== PROYECTOS ===== -->
-    <section id="proyectos" class="proyectos">
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
         <div class="container">
-            <div class="section-header">
-                <h2>Mis Proyectos</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="proyectos-grid">
-                <div class="proyecto-card">
-                    <div class="proyecto-image" style="background-image: url('img/5.webp');">
-                        <div class="proyecto-overlay">
-                            <span class="proyecto-tag">Rock · Ska</span>
-                        </div>
-                    </div>
-                    <div class="proyecto-info">
-                        <h3>Los Hijos de Tencha</h3>
-                        <p>Rock y ska con sabor costarricense. Energía pura en cada show.</p>
-                        <a href="#" class="proyecto-link">Saber más →</a>
-                    </div>
-                </div>
-
-                <div class="proyecto-card">
-                    <div class="proyecto-image" style="background-image: url('img/7.webp');">
-                        <div class="proyecto-overlay">
-                            <span class="proyecto-tag">Acústico · Balada</span>
-                        </div>
-                    </div>
-                    <div class="proyecto-info">
-                        <h3>Tributo Acústico</h3>
-                        <p>Versiones y canciones propias en formato íntimo, con alma y sentimiento.</p>
-                        <a href="#" class="proyecto-link">Saber más →</a>
-                    </div>
-                </div>
-
-                <div class="proyecto-card">
-                    <div class="proyecto-image" style="background-image: url('img/2.webp');">
-                        <div class="proyecto-overlay">
-                            <span class="proyecto-tag">Punk Rock</span>
-                        </div>
-                    </div>
-                    <div class="proyecto-info">
-                        <h3>San Blas Punkrock CR</h3>
-                        <p>Punk rock con actitud. Letras directas y guitarras afiladas.</p>
-                        <a href="#" class="proyecto-link">Saber más →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== MÚSICA ===== -->
-    <section id="musica" class="musica" style="background-image: url('img/8.webp');">
-        <div class="musica-overlay"></div>
-        <div class="container musica-content">
-            <div class="section-header light">
-                <h2>Mi Música</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="musica-grid">
-                <div class="soundcloud-player">
-                    <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay"
-                        src="https://w.soundcloud.com/player/?url=https%3A//on.soundcloud.com/p37TMc0evhRzM6PEgi&color=%23dc2626&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true">
-                    </iframe>
-                </div>
-
-                <div class="musica-links">
-                    <h3>Toda mi música en un solo lugar</h3>
-                    <a href="https://linktr.ee/tavoramirezmusico" target="_blank" class="btn btn-primary btn-block">
-                        <i class="fas fa-link"></i> Linktr.ee
-                    </a>
-                    <div class="platform-links">
-                        <a href="https://on.soundcloud.com/p37TMc0evhRzM6PEgi" target="_blank"
-                            class="platform soundcloud">
-                            <i class="fab fa-soundcloud"></i> SoundCloud
-                        </a>
-                        <a href="#" class="platform youtube">
-                            <i class="fab fa-youtube"></i> YouTube
-                        </a>
-                        <a href="#" class="platform spotify">
-                            <i class="fab fa-spotify"></i> Spotify
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SHOWS ===== -->
-    <section id="shows" class="shows" style="background-image: url('img/6.webp');">
-        <div class="shows-overlay"></div>
-        <div class="container shows-content">
-            <div class="section-header light">
-                <h2>Próximos Shows</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="shows-grid">
-                <div class="show-card">
-                    <div class="show-date">
-                        <span class="day">15</span>
-                        <span class="month">May</span>
-                    </div>
-                    <div class="show-info">
-                        <h3>Festival de la Música</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> San José, Costa Rica</p>
-                        <p><i class="fas fa-clock"></i> 8:00 PM</p>
-                    </div>
-                    <a href="#" class="show-btn">Detalles</a>
-                </div>
-
-                <div class="show-card">
-                    <div class="show-date">
-                        <span class="day">28</span>
-                        <span class="month">May</span>
-                    </div>
-                    <div class="show-info">
-                        <h3>Noche de Ska & Reggae</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Heredia, Costa Rica</p>
-                        <p><i class="fas fa-clock"></i> 9:00 PM</p>
-                    </div>
-                    <a href="#" class="show-btn">Detalles</a>
-                </div>
-
-                <div class="show-card">
-                    <div class="show-date">
-                        <span class="day">10</span>
-                        <span class="month">Jun</span>
-                    </div>
-                    <div class="show-info">
-                        <h3>Concierto Acústico</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> Escazú, Costa Rica</p>
-                        <p><i class="fas fa-clock"></i> 7:30 PM</p>
-                    </div>
-                    <a href="#" class="show-btn">Detalles</a>
-                </div>
-            </div>
-
-            <div class="shows-more">
-                <p>📅 ¿Querés que toque en tu evento?</p>
-                <a href="#contacto" class="btn btn-primary">Contactame</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CONTACTO ===== -->
-    <section id="contacto" class="contacto" style="background-image: url('img/9.webp');">
-        <div class="contacto-overlay"></div>
-        <div class="container contacto-content">
-            <div class="section-header light">
-                <h2>Contacto</h2>
-                <div class="section-line"></div>
-            </div>
-
-            <div class="contacto-grid">
-                <div class="contacto-info">
-                    <h3>Conectá conmigo</h3>
-                    <p>Seguramente me encontrás en alguna de estas redes:</p>
-
-                    <div class="contacto-redes">
-                        <a href="https://instagram.com/tavo_musico" target="_blank" class="red social-instagram">
-                            <i class="fab fa-instagram"></i> @tavo_musico
-                        </a>
-                        <a href="https://www.facebook.com/share/1MJoyMrbpH/" target="_blank"
-                            class="red social-facebook">
-                            <i class="fab fa-facebook"></i> Tavo Músico
-                        </a>
-                        <a href="https://www.tiktok.com/@tavo_musico" target="_blank" class="red social-tiktok">
-                            <i class="fab fa-tiktok"></i> @tavo_musico
-                        </a>
-                        <a href="https://on.soundcloud.com/p37TMc0evhRzM6PEgi" target="_blank"
-                            class="red social-soundcloud">
-                            <i class="fab fa-soundcloud"></i> Tavo Ramírez
-                        </a>
-                    </div>
-                </div>
-
-                <div class="contacto-form">
-                    <h3>Escribime</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="nombre" placeholder="Tu nombre" required />
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" placeholder="Tu email" required />
-                        </div>
-                        <div class="form-group">
-                            <textarea id="mensaje" rows="4" placeholder="Tu mensaje..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i> Enviar mensaje
-                        </button>
-                    </form>
-                    <p class="form-nota">📧 tavomusico@proton.me</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="img/3.webp" alt="TAVO" />
-                    <span>TAVO MÚSICO</span>
-                </div>
-
-                <div class="footer-links">
-                    <a href="#inicio">Inicio</a>
-                    <a href="#bio">Bio</a>
-                    <a href="#proyectos">Proyectos</a>
-                    <a href="#musica">Música</a>
-                    <a href="#shows">Shows</a>
-                    <a href="#contacto">Contacto</a>
-                </div>
-
-                <div class="footer-social">
-                    <a href="https://instagram.com/tavo_musico" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/share/1MJoyMrbpH/" target="_blank"><i
-                            class="fab fa-facebook"></i></a>
-                    <a href="https://www.tiktok.com/@tavo_musico" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    <a href="https://on.soundcloud.com/p37TMc0evhRzM6PEgi" target="_blank"><i
-                            class="fab fa-soundcloud"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 TAVO MÚSICO</p>
-                <p class="footer-domain">🌐 tavomusico.com</p>
-            </div>
+            <p>&copy; 2026 TAVOMUSICO · Multiinstrumentista. Todos los derechos reservados.</p>
         </div>
     </footer>
 
+    <!-- ==================== SCRIPTS ==================== -->
     <script src="js/script.js"></script>
 </body>
 
