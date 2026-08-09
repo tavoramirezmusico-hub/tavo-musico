@@ -112,6 +112,42 @@ a {
     font-weight: 700;
     color: var(--color-blanco);
     line-height: 1.2;
+    position: relative;
+    display: inline-block;
+}
+
+.titulo-seccion h2::before {
+    content: '♪';
+    position: absolute;
+    left: -40px;
+    top: -10px;
+    font-size: 1.5rem;
+    color: var(--color-dorado);
+    opacity: 0.5;
+    animation: notaFlotanteTitulo 3s ease-in-out infinite;
+}
+
+.titulo-seccion h2::after {
+    content: '♫';
+    position: absolute;
+    right: -40px;
+    bottom: -10px;
+    font-size: 1.5rem;
+    color: var(--color-dorado);
+    opacity: 0.5;
+    animation: notaFlotanteTitulo 3s ease-in-out infinite 1.5s;
+}
+
+@keyframes notaFlotanteTitulo {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(10deg);
+    }
 }
 
 .titulo-seccion h2 span {
@@ -122,6 +158,180 @@ a {
     color: var(--color-gris-claro);
     font-size: 1.1rem;
     margin-top: 10px;
+}
+
+/* =====================================
+   NOTAS EN SECCIONES
+===================================== */
+.notas-seccion {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.notas-seccion span {
+    position: absolute;
+    font-size: 2rem;
+    color: rgba(212, 160, 23, 0.04);
+    animation: notasSection 20s linear infinite;
+}
+
+.notas-seccion span:nth-child(1) {
+    left: 5%;
+    top: 10%;
+    animation-delay: 0s;
+    font-size: 3rem;
+}
+
+.notas-seccion span:nth-child(2) {
+    left: 15%;
+    top: 70%;
+    animation-delay: 4s;
+    font-size: 2.5rem;
+}
+
+.notas-seccion span:nth-child(3) {
+    left: 85%;
+    top: 20%;
+    animation-delay: 8s;
+    font-size: 3.5rem;
+}
+
+.notas-seccion span:nth-child(4) {
+    left: 75%;
+    top: 80%;
+    animation-delay: 12s;
+    font-size: 2rem;
+}
+
+.notas-seccion span:nth-child(5) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 16s;
+    font-size: 4rem;
+}
+
+@keyframes notasSection {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(10deg) scale(1.1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg) scale(1);
+        opacity: 0.4;
+    }
+}
+
+/* =====================================
+   ONDA DE SONIDO EN HERO
+===================================== */
+.onda-sonido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    height: 40px;
+    margin-bottom: 30px;
+}
+
+.onda-sonido span {
+    display: block;
+    width: 4px;
+    height: 10px;
+    background: var(--color-dorado);
+    border-radius: 2px;
+    animation: ondaSonido 0.8s ease-in-out infinite alternate;
+}
+
+.onda-sonido span:nth-child(1) {
+    animation-delay: 0s;
+    height: 15px;
+}
+
+.onda-sonido span:nth-child(2) {
+    animation-delay: 0.1s;
+    height: 30px;
+}
+
+.onda-sonido span:nth-child(3) {
+    animation-delay: 0.2s;
+    height: 40px;
+}
+
+.onda-sonido span:nth-child(4) {
+    animation-delay: 0.3s;
+    height: 25px;
+}
+
+.onda-sonido span:nth-child(5) {
+    animation-delay: 0.4s;
+    height: 10px;
+}
+
+@keyframes ondaSonido {
+    0% {
+        transform: scaleY(0.3);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+/* =====================================
+   PARTITURAS DE FONDO
+===================================== */
+.partituras-fondo {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 0.03;
+}
+
+.partituras-fondo::before {
+    content: '♩ ♪ ♫ ♬ ♩ ♪ ♫ ♬ ♩ ♪ ♫ ♬';
+    position: absolute;
+    top: 10%;
+    left: -10%;
+    font-size: 8rem;
+    white-space: nowrap;
+    animation: partituraScroll 30s linear infinite;
+    color: var(--color-dorado);
+    letter-spacing: 60px;
+}
+
+.partituras-fondo::after {
+    content: '♪ ♫ ♬ ♩ ♪ ♫ ♬ ♩ ♪ ♫ ♬ ♩';
+    position: absolute;
+    bottom: 10%;
+    right: -10%;
+    font-size: 6rem;
+    white-space: nowrap;
+    animation: partituraScroll 25s linear infinite reverse;
+    color: var(--color-dorado);
+    letter-spacing: 50px;
+}
+
+@keyframes partituraScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 /* =====================================
@@ -394,7 +604,7 @@ a {
     font-size: 1.4rem;
     color: rgba(255, 255, 255, 0.85);
     max-width: 600px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     animation: aparecerSubtitulo 1.8s ease;
     text-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
     font-weight: 300;
@@ -588,6 +798,8 @@ nav {
     grid-template-columns: 1fr 1fr;
     gap: 70px;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .sobre-imagen {
@@ -723,6 +935,8 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
+    position: relative;
+    z-index: 1;
 }
 
 .instrumento-card {
@@ -789,6 +1003,29 @@ nav {
     line-height: 1;
 }
 
+.card-notas {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: var(--color-dorado);
+    opacity: 0.5;
+    letter-spacing: 4px;
+    animation: notasCard 3s ease-in-out infinite;
+}
+
+@keyframes notasCard {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: translateX(0);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: translateX(5px);
+    }
+}
+
 .instrumento-card h3 {
     font-family: var(--font-titulos);
     font-size: 1.4rem;
@@ -816,6 +1053,8 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
+    position: relative;
+    z-index: 1;
 }
 
 .servicio-card {
@@ -886,12 +1125,15 @@ nav {
 .galeria {
     padding: 100px 0;
     background: var(--color-negro);
+    position: relative;
 }
 
 .galeria-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
+    position: relative;
+    z-index: 1;
 }
 
 .galeria-item.flip-card {
@@ -954,6 +1196,17 @@ nav {
 .flip-back i {
     font-size: 3.5rem;
     margin-bottom: 10px;
+    animation: notaSpin 4s linear infinite;
+}
+
+@keyframes notaSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .flip-back span {
@@ -975,6 +1228,8 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
+    position: relative;
+    z-index: 1;
 }
 
 .contacto-info h2 {
@@ -1072,7 +1327,7 @@ nav {
 .red-social:hover {
     background: var(--color-dorado);
     color: var(--color-negro);
-    transform: translateY(-5px) scale(1.05);
+    transform: translateY(-5px) scale(1.05) rotate(10deg);
     box-shadow: 0 10px 30px rgba(212, 160, 23, 0.3);
 }
 
@@ -1141,12 +1396,57 @@ nav {
 }
 
 /* =====================================
-   FOOTER
+   FOOTER CON PIANO
 ===================================== */
 footer {
     background: var(--color-negro);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding: 60px 0 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.piano-footer {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    padding: 15px 0;
+    opacity: 0.3;
+}
+
+.piano-footer span {
+    display: block;
+    width: 20px;
+    height: 50px;
+    background: var(--color-blanco);
+    border-radius: 3px 3px 0 0;
+    transition: all 0.15s ease;
+    position: relative;
+}
+
+.piano-footer span:nth-child(2),
+.piano-footer span:nth-child(4),
+.piano-footer span:nth-child(7),
+.piano-footer span:nth-child(9),
+.piano-footer span:nth-child(11),
+.piano-footer span:nth-child(14) {
+    background: var(--color-negro);
+    height: 30px;
+    margin-top: 20px;
+}
+
+.piano-footer span:hover {
+    transform: scaleY(0.9);
+    background: var(--color-dorado);
+}
+
+.piano-footer span:nth-child(2):hover,
+.piano-footer span:nth-child(4):hover,
+.piano-footer span:nth-child(7):hover,
+.piano-footer span:nth-child(9):hover,
+.piano-footer span:nth-child(11):hover,
+.piano-footer span:nth-child(14):hover {
+    background: var(--color-dorado-oscuro);
 }
 
 .footer-content {
@@ -1155,6 +1455,8 @@ footer {
     gap: 40px;
     align-items: start;
     margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-logo p {
@@ -1173,11 +1475,23 @@ footer {
     color: var(--color-gris-claro);
     transition: var(--transition);
     font-size: 0.9rem;
+    position: relative;
+}
+
+.footer-links a::before {
+    content: '♪ ';
+    color: var(--color-dorado);
+    opacity: 0;
+    transition: var(--transition);
 }
 
 .footer-links a:hover {
     color: var(--color-dorado);
     transform: translateX(5px);
+}
+
+.footer-links a:hover::before {
+    opacity: 1;
 }
 
 .footer-social {
@@ -1202,7 +1516,7 @@ footer {
 .footer-social a:hover {
     background: var(--color-dorado);
     color: var(--color-negro);
-    transform: translateY(-4px) scale(1.05);
+    transform: translateY(-4px) scale(1.05) rotate(-10deg);
 }
 
 .footer-bottom {
@@ -1213,6 +1527,8 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-bottom p {
@@ -1301,6 +1617,15 @@ footer {
     .contacto-info h2 {
         font-size: 2.5rem;
     }
+
+    .titulo-seccion h2::before,
+    .titulo-seccion h2::after {
+        display: none;
+    }
+
+    .piano-footer {
+        display: none;
+    }
 }
 
 /* =====================================
@@ -1368,6 +1693,35 @@ footer {
     .hero-botones .btn {
         padding: 14px 28px;
         font-size: 0.9rem;
+    }
+
+    .onda-sonido {
+        height: 30px;
+        margin-bottom: 20px;
+    }
+
+    .onda-sonido span {
+        width: 3px;
+    }
+
+    .onda-sonido span:nth-child(1) {
+        height: 10px;
+    }
+
+    .onda-sonido span:nth-child(2) {
+        height: 20px;
+    }
+
+    .onda-sonido span:nth-child(3) {
+        height: 30px;
+    }
+
+    .onda-sonido span:nth-child(4) {
+        height: 18px;
+    }
+
+    .onda-sonido span:nth-child(5) {
+        height: 8px;
     }
 
     .titulo-seccion h2 {
@@ -1480,6 +1834,23 @@ footer {
     .card-icon {
         font-size: 2.6rem;
     }
+
+    .notas-seccion {
+        display: none;
+    }
+
+    .piano-footer {
+        display: none;
+    }
+
+    .titulo-seccion h2::before,
+    .titulo-seccion h2::after {
+        display: none;
+    }
+
+    .partituras-fondo {
+        display: none;
+    }
 }
 
 /* =====================================
@@ -1515,6 +1886,35 @@ footer {
         flex-direction: column;
         width: 100%;
         max-width: 300px;
+    }
+
+    .onda-sonido {
+        height: 25px;
+        gap: 3px;
+    }
+
+    .onda-sonido span {
+        width: 2px;
+    }
+
+    .onda-sonido span:nth-child(1) {
+        height: 8px;
+    }
+
+    .onda-sonido span:nth-child(2) {
+        height: 16px;
+    }
+
+    .onda-sonido span:nth-child(3) {
+        height: 25px;
+    }
+
+    .onda-sonido span:nth-child(4) {
+        height: 14px;
+    }
+
+    .onda-sonido span:nth-child(5) {
+        height: 6px;
     }
 
     .titulo-seccion h2 {
@@ -1626,6 +2026,10 @@ footer {
         font-size: 2.2rem;
     }
 
+    .card-notas {
+        font-size: 0.6rem;
+    }
+
     .servicio-card {
         padding: 28px 18px;
     }
@@ -1706,5 +2110,9 @@ footer {
 
     .flip-back span {
         font-size: 0.7rem;
+    }
+
+    .onda-sonido {
+        display: none;
     }
 }

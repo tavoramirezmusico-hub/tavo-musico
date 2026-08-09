@@ -13,7 +13,7 @@ function crearNotas() {
 
     const simbolos = ['♪', '♫', '♬', '🎵', '🎶'];
     const colores = ['#d4a017', '#f0d060', '#ffffff', '#b8860b'];
-    const cantidad = 25;
+    const cantidad = 30;
 
     for (let i = 0; i < cantidad; i++) {
         const nota = document.createElement('div');
@@ -36,6 +36,24 @@ function crearNotas() {
 
         contenedor.appendChild(nota);
     }
+}
+
+// =====================================
+// PIANO INTERACTIVO EN FOOTER
+// =====================================
+function activarPiano() {
+    const teclas = document.querySelectorAll('.piano-footer span');
+    teclas.forEach((tecla, index) => {
+        tecla.addEventListener('mouseenter', () => {
+            // Efecto visual
+            tecla.style.transform = 'scaleY(0.8)';
+            tecla.style.background = 'var(--color-dorado)';
+            setTimeout(() => {
+                tecla.style.transform = '';
+                tecla.style.background = '';
+            }, 300);
+        });
+    });
 }
 
 // =====================================
@@ -199,7 +217,7 @@ if (form) {
         }
 
         // Cambia este número por tu WhatsApp real
-        const numeroWhatsApp = '50612345678';
+        const numeroWhatsApp = '50671012511';
 
         let mensajeWhatsApp = `Hola Tavo Músico,%0A%0A`;
         mensajeWhatsApp += `Mi nombre es ${nombre}.%0A`;
@@ -396,6 +414,7 @@ document.addEventListener('DOMContentLoaded', function () {
     efectoBrilloTitulo();
     optimizarParaMovil();
     resetInactivityTimer();
+    activarPiano();
 
     console.log('🎵🎶 Música cargada correctamente - Tavo Músico');
 });
@@ -423,7 +442,6 @@ window.addEventListener('load', function () {
         }, 400);
     }
 
-    // Asegurar que el hero se vea bien al cargar
     if (window.innerWidth < 768) {
         document.querySelector('.hero')?.classList.add('hero-mobile');
     }
