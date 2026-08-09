@@ -112,6 +112,47 @@ a {
 }
 
 /* =====================================
+   LOGO - IMAGEN
+===================================== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.3rem;
+}
+
+.logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.footer-logo-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo-text {
+    color: var(--color-blanco);
+    font-weight: 400;
+}
+
+.logo-text strong {
+    color: var(--color-dorado);
+    font-weight: 700;
+}
+
+/* =====================================
    BOTONES CON CHISPA MÁGICA
 ===================================== */
 .btn {
@@ -240,7 +281,7 @@ a {
     display: flex;
     flex-direction: column;
     background: var(--color-negro);
-    background-image: url('../img/8.webp');
+    background-image: url('../img/hero.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -409,45 +450,6 @@ nav {
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1.3rem;
-}
-
-.logo-icon {
-    color: var(--color-dorado);
-    font-size: 1.6rem;
-    animation: vibrarNota 3s ease-in-out infinite;
-}
-
-@keyframes vibrarNota {
-
-    0%,
-    100% {
-        transform: scale(1) rotate(0deg);
-    }
-
-    25% {
-        transform: scale(1.2) rotate(-5deg);
-    }
-
-    75% {
-        transform: scale(1.2) rotate(5deg);
-    }
-}
-
-.logo-text {
-    color: var(--color-blanco);
-    font-weight: 400;
-}
-
-.logo-text strong {
-    color: var(--color-dorado);
-    font-weight: 700;
 }
 
 .menu-btn {
@@ -1121,14 +1123,6 @@ footer {
     gap: 40px;
     align-items: start;
     margin-bottom: 30px;
-}
-
-.footer-logo .logo-icon {
-    font-size: 1.5rem;
-}
-
-.footer-logo .logo-text {
-    font-size: 1.2rem;
 }
 
 .footer-logo p {
