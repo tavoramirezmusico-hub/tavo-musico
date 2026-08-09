@@ -1,6 +1,7 @@
 // =====================================
 // TAVO MÚSICO - SCRIPT MUSICAL
 // MULTIINSTRUMENTISTA · ANIMACIONES
+// DISEÑO RENOVADO
 // =====================================
 
 // =====================================
@@ -12,13 +13,13 @@ function crearNotas() {
 
     const simbolos = ['♪', '♫', '♬', '🎵', '🎶'];
     const colores = ['#d4a017', '#f0d060', '#ffffff', '#b8860b'];
-    const cantidad = 30;
+    const cantidad = 25;
 
     for (let i = 0; i < cantidad; i++) {
         const nota = document.createElement('div');
         nota.className = 'nota';
 
-        const size = Math.random() * 1.5 + 1;
+        const size = Math.random() * 1.5 + 0.8;
         const x = Math.random() * 100;
         const duracion = Math.random() * 15 + 10;
         const delay = Math.random() * 15;
@@ -31,7 +32,7 @@ function crearNotas() {
         nota.style.color = color;
         nota.style.animationDuration = duracion + 's';
         nota.style.animationDelay = delay + 's';
-        nota.style.textShadow = `0 0 ${size * 10}px ${color}40`;
+        nota.style.textShadow = `0 0 ${size * 8}px ${color}30`;
 
         contenedor.appendChild(nota);
     }
@@ -156,13 +157,13 @@ const observerMusical = new IntersectionObserver((entries) => {
             entry.target.style.filter = 'blur(0)';
         }
     });
-}, { threshold: 0.15 });
+}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
 elementosMusicales.forEach((el, index) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(40px)';
     el.style.filter = 'blur(4px)';
-    el.style.transition = `all 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.1}s`;
+    el.style.transition = `all 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.08}s`;
     observerMusical.observe(el);
 });
 
@@ -197,7 +198,8 @@ if (form) {
             return;
         }
 
-        const numeroWhatsApp = '50612345678'; // Cambia por tu número
+        // Cambia este número por tu WhatsApp real
+        const numeroWhatsApp = '50612345678';
 
         let mensajeWhatsApp = `Hola Tavo Músico,%0A%0A`;
         mensajeWhatsApp += `Mi nombre es ${nombre}.%0A`;
@@ -216,6 +218,7 @@ if (form) {
         }
 
         const btn = form.querySelector('.btn-magico');
+        const btnOriginalHTML = btn.innerHTML;
         btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Abriendo WhatsApp...';
         btn.disabled = true;
 
@@ -223,11 +226,11 @@ if (form) {
             const url = `https://wa.me/${numeroWhatsApp}?text=${mensajeWhatsApp}`;
             window.open(url, '_blank');
 
-            btn.innerHTML = '<i class="fa-regular fa-paper-plane"></i> Enviar Mensaje <span class="chispa"></span>';
+            btn.innerHTML = btnOriginalHTML;
             btn.disabled = false;
 
             mostrarMensaje('✅ ¡Redirigiendo a WhatsApp! Completa el mensaje y envíalo. 🎵', 'success');
-        }, 1000);
+        }, 800);
     });
 }
 
@@ -238,7 +241,7 @@ function mostrarMensaje(texto, tipo) {
 
     setTimeout(() => {
         formMensaje.style.display = 'none';
-    }, 5000);
+    }, 6000);
 }
 
 // =====================================
@@ -249,11 +252,11 @@ function efectoBrilloTitulo() {
     if (!titulo) return;
 
     setInterval(() => {
-        titulo.style.textShadow = '0 0 60px rgba(212, 160, 23, 0.5)';
+        titulo.style.textShadow = '0 0 60px rgba(212, 160, 23, 0.6)';
         setTimeout(() => {
             titulo.style.textShadow = '0 0 20px rgba(212, 160, 23, 0.2)';
-        }, 300);
-    }, 3000);
+        }, 400);
+    }, 3500);
 }
 
 // =====================================
@@ -265,7 +268,7 @@ document.querySelectorAll('.flip-card').forEach((card) => {
         this.style.transform = 'scale(0.95)';
         setTimeout(() => {
             this.style.transform = 'scale(1)';
-        }, 100);
+        }, 150);
     });
 });
 
@@ -274,57 +277,54 @@ document.querySelectorAll('.flip-card').forEach((card) => {
 // =====================================
 document.querySelectorAll('.btn-magico').forEach(btn => {
     btn.addEventListener('click', function (e) {
+        const rect = this.getBoundingClientRect();
         const chispa = document.createElement('span');
         chispa.style.position = 'absolute';
-        chispa.style.left = e.clientX - this.getBoundingClientRect().left + 'px';
-        chispa.style.top = e.clientY - this.getBoundingClientRect().top + 'px';
+        chispa.style.left = (e.clientX - rect.left) + 'px';
+        chispa.style.top = (e.clientY - rect.top) + 'px';
         chispa.style.width = '20px';
         chispa.style.height = '20px';
-        chispa.style.background = 'rgba(255,255,255,0.6)';
+        chispa.style.background = 'rgba(255,255,255,0.7)';
         chispa.style.borderRadius = '50%';
         chispa.style.pointerEvents = 'none';
         chispa.style.transform = 'scale(0)';
-        chispa.style.transition = 'all 0.5s ease';
+        chispa.style.transition = 'all 0.6s ease';
         this.style.position = 'relative';
         this.style.overflow = 'hidden';
         this.appendChild(chispa);
 
         setTimeout(() => {
-            chispa.style.transform = 'scale(4)';
+            chispa.style.transform = 'scale(5)';
             chispa.style.opacity = '0';
         }, 10);
 
         setTimeout(() => {
             chispa.remove();
-        }, 600);
+        }, 700);
     });
 });
 
 // =====================================
 // EFECTO DE PARALLAX EN EL HERO
 // =====================================
+let parallaxTimeout;
 document.addEventListener('mousemove', function (e) {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
+    if (window.innerWidth < 768) return;
 
-    const x = (e.clientX / window.innerWidth - 0.5) * 10;
-    const y = (e.clientY / window.innerHeight - 0.5) * 10;
+    clearTimeout(parallaxTimeout);
+    parallaxTimeout = setTimeout(() => {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
 
-    const overlay = hero.querySelector('.hero-overlay');
-    if (overlay) {
-        overlay.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
-    }
-});
+        const x = (e.clientX / window.innerWidth - 0.5) * 8;
+        const y = (e.clientY / window.innerHeight - 0.5) * 8;
 
-// =====================================
-// INICIALIZAR TODAS LAS MAGIAS MUSICALES
-// =====================================
-document.addEventListener('DOMContentLoaded', function () {
-    crearNotas();
-    animarContadores();
-    efectoBrilloTitulo();
-
-    console.log('🎵🎶 Música cargada correctamente - Tavo Músico');
+        const overlay = hero.querySelector('.hero-overlay');
+        if (overlay) {
+            overlay.style.transition = 'transform 0.1s ease-out';
+            overlay.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        }
+    }, 10);
 });
 
 // =====================================
@@ -338,12 +338,66 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(targetId);
         if (target) {
             e.preventDefault();
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const navHeight = document.querySelector('nav')?.offsetHeight || 80;
+            const targetPosition = target.offsetTop - navHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
         }
     });
+});
+
+// =====================================
+// DETECTAR CUANDO EL USUARIO ESTÁ INACTIVO
+// =====================================
+let inactivityTimeout;
+const resetInactivityTimer = () => {
+    clearTimeout(inactivityTimeout);
+    inactivityTimeout = setTimeout(() => {
+        const notas = document.querySelectorAll('.nota');
+        notas.forEach((nota, index) => {
+            setTimeout(() => {
+                nota.style.opacity = '0.3';
+                setTimeout(() => {
+                    nota.style.opacity = '';
+                }, 2000);
+            }, index * 50);
+        });
+    }, 30000);
+};
+
+document.addEventListener('mousemove', resetInactivityTimer);
+document.addEventListener('keydown', resetInactivityTimer);
+document.addEventListener('scroll', resetInactivityTimer);
+
+// =====================================
+// OPTIMIZACIÓN PARA MÓVIL - REDUCIR NOTAS
+// =====================================
+function optimizarParaMovil() {
+    if (window.innerWidth < 768) {
+        const notas = document.querySelectorAll('.nota');
+        const notasAMantener = Math.floor(notas.length * 0.6);
+        for (let i = notasAMantener; i < notas.length; i++) {
+            if (notas[i]) {
+                notas[i].style.display = 'none';
+            }
+        }
+    }
+}
+
+// =====================================
+// INICIALIZAR TODAS LAS MAGIAS MUSICALES
+// =====================================
+document.addEventListener('DOMContentLoaded', function () {
+    crearNotas();
+    animarContadores();
+    efectoBrilloTitulo();
+    optimizarParaMovil();
+    resetInactivityTimer();
+
+    console.log('🎵🎶 Música cargada correctamente - Tavo Músico');
 });
 
 // =====================================
@@ -355,19 +409,41 @@ window.addEventListener('load', function () {
         const flash = document.createElement('div');
         flash.style.position = 'fixed';
         flash.style.inset = '0';
-        flash.style.background = 'rgba(212, 160, 23, 0.08)';
+        flash.style.background = 'rgba(212, 160, 23, 0.06)';
         flash.style.pointerEvents = 'none';
         flash.style.zIndex = '99999';
-        flash.style.transition = 'opacity 0.5s ease';
+        flash.style.transition = 'opacity 0.8s ease';
         document.body.appendChild(flash);
 
         setTimeout(() => {
             flash.style.opacity = '0';
             setTimeout(() => {
                 flash.remove();
-            }, 500);
-        }, 300);
+            }, 800);
+        }, 400);
     }
+
+    // Asegurar que el hero se vea bien al cargar
+    if (window.innerWidth < 768) {
+        document.querySelector('.hero')?.classList.add('hero-mobile');
+    }
+});
+
+// =====================================
+// REINICIAR ANIMACIONES AL REDIMENSIONAR
+// =====================================
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        optimizarParaMovil();
+
+        if (window.innerWidth < 768) {
+            document.querySelector('.hero')?.classList.add('hero-mobile');
+        } else {
+            document.querySelector('.hero')?.classList.remove('hero-mobile');
+        }
+    }, 250);
 });
 
 console.log('🎵 ¡La música está en el aire! 🎵');
