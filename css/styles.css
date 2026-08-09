@@ -711,7 +711,7 @@ nav {
 }
 
 /* =====================================
-   INSTRUMENTOS - DISEÑO RENOVADO
+   INSTRUMENTOS - ACTUALIZADOS
 ===================================== */
 .instrumentos {
     padding: 100px 0;
@@ -721,19 +721,24 @@ nav {
 
 .instrumentos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
 }
 
 .instrumento-card {
     background: var(--color-gris);
-    padding: 40px 30px;
+    padding: 35px 25px;
     border-radius: var(--radius);
     border: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .instrumento-card::before {
@@ -778,22 +783,24 @@ nav {
 }
 
 .card-icon {
-    font-size: 3rem;
-    margin-bottom: 15px;
+    font-size: 3.2rem;
+    margin-bottom: 12px;
     display: block;
+    line-height: 1;
 }
 
 .instrumento-card h3 {
     font-family: var(--font-titulos);
     font-size: 1.4rem;
     color: var(--color-blanco);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .instrumento-card p {
     color: var(--color-gris-claro);
-    font-size: 0.95rem;
-    line-height: 1.7;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 280px;
 }
 
 /* =====================================
@@ -1382,7 +1389,11 @@ footer {
         grid-column: span 2;
     }
 
-    .instrumentos-grid,
+    .instrumentos-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
     .servicios-grid {
         grid-template-columns: 1fr 1fr;
     }
@@ -1456,6 +1467,19 @@ footer {
         bottom: 20px;
         right: 20px;
     }
+
+    .instrumento-card {
+        padding: 28px 18px;
+        min-height: 180px;
+    }
+
+    .instrumento-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-icon {
+        font-size: 2.6rem;
+    }
 }
 
 /* =====================================
@@ -1504,7 +1528,7 @@ footer {
     .instrumentos-grid,
     .servicios-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 18px;
     }
 
     .galeria-grid {
@@ -1585,18 +1609,29 @@ footer {
         right: 15px;
     }
 
-    .instrumento-card,
-    .servicio-card {
-        padding: 30px 20px;
+    .instrumento-card {
+        padding: 25px 16px;
+        min-height: 160px;
     }
 
-    .instrumento-card h3,
-    .servicio-card h3 {
-        font-size: 1.2rem;
+    .instrumento-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .instrumento-card p {
+        font-size: 0.85rem;
     }
 
     .card-icon {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    .servicio-card {
+        padding: 28px 18px;
+    }
+
+    .servicio-card h3 {
+        font-size: 1.2rem;
     }
 }
 
@@ -1636,23 +1671,33 @@ footer {
         padding: 15px;
     }
 
-    .instrumento-card,
-    .servicio-card {
-        padding: 25px 15px;
+    .instrumento-card {
+        padding: 20px 12px;
+        min-height: 140px;
     }
 
-    .instrumento-card h3,
-    .servicio-card h3 {
+    .instrumento-card h3 {
         font-size: 1rem;
     }
 
-    .instrumento-card p,
-    .servicio-card p {
+    .instrumento-card p {
         font-size: 0.8rem;
     }
 
     .card-icon {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .servicio-card {
+        padding: 22px 14px;
+    }
+
+    .servicio-card h3 {
+        font-size: 1rem;
+    }
+
+    .servicio-card p {
+        font-size: 0.85rem;
     }
 
     .flip-back i {
