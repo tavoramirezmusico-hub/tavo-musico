@@ -2,248 +2,456 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TAVOMUSICO · Multiinstrumentista</title>
-    <link rel="icon" href="img/logo.webp" type="image/webp" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <!-- Font Awesome para iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tavo Músico | Multiinstrumentista</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <meta name="description"
+        content="Tavo Músico - Multiinstrumentista. Música en vivo para eventos, conciertos y sesiones privadas.">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Tavo Músico | Multiinstrumentista">
+    <meta property="og:description" content="Música en vivo con múltiples instrumentos para todo tipo de eventos.">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/webp" href="img/logo.webp">
 </head>
 
 <body>
 
-    <!-- ==================== MENÚ HAMBURGUESA ==================== -->
-    <header class="header" id="header">
-        <div class="container header-container">
-            <div class="logo">
-                <img src="img/logo.webp" alt="TAVOMUSICO Logo" class="logo-img" />
-                <span class="logo-text">TAVOMUSICO</span>
-            </div>
-            <nav class="nav" id="nav">
-                <ul class="nav-list">
-                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="#biografia" class="nav-link">Biografía</a></li>
-                    <li><a href="#fotos" class="nav-link">Fotos</a></li>
-                    <li><a href="#videos" class="nav-link">Videos</a></li>
-                    <li><a href="#soundcloud" class="nav-link">SoundCloud</a></li>
-                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
-                </ul>
-            </nav>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </header>
-
-    <!-- ==================== INICIO / HERO ==================== -->
-    <section id="inicio" class="hero">
-        <div class="hero-bg"></div>
+    <!-- =====================================
+         HERO - INICIO
+    ===================================== -->
+    <section class="hero" id="inicio">
         <div class="hero-overlay"></div>
-        <div class="container hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">🎵 Multiinstrumentista</div>
-                <h1 class="hero-title">Tavo <span>Músico</span></h1>
-                <p class="hero-subtitle">
-                    <span class="typing-text">Cantante · Bajista · Guitarrista · Tecnólogo</span>
-                </p>
-                <div class="hero-description">
-                    <p>Músico costarricense con más de 10 años de experiencia en escenarios de Centroamérica.</p>
-                </div>
-                <div class="hero-buttons">
-                    <a href="#biografia" class="btn btn-primary">
-                        <i class="fas fa-user"></i> Conóceme
-                    </a>
-                    <a href="#fotos" class="btn btn-secondary">
-                        <i class="fas fa-images"></i> Ver Fotos
-                    </a>
-                    <a href="https://wa.me/50671012511" target="_blank" class="btn btn-whatsapp">
-                        <i class="fab fa-whatsapp"></i> WhatsApp
-                    </a>
-                </div>
-                <div class="hero-social">
-                    <a href="https://linktr.ee/tavoramirezmusico" target="_blank" class="social-link">
-                        <i class="fas fa-link"></i>
-                    </a>
-                    <a href="mailto:tavoramirezmusico@gmail.com" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://soundcloud.com/tavo-ramirez-110581398" target="_blank" class="social-link">
-                        <i class="fab fa-soundcloud"></i>
-                    </a>
-                </div>
+        <div class="notas-musicales" id="notas"></div>
+
+        <nav>
+            <a href="#inicio" class="logo">
+                <span class="logo-icon">🎵</span>
+                <span class="logo-text">Tavo <strong>Músico</strong></span>
+            </a>
+            <button class="menu-btn" id="menuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="menu" id="menu">
+                <li><a href="#inicio" class="active">Inicio</a></li>
+                <li><a href="#sobre">Sobre Mí</a></li>
+                <li><a href="#instrumentos">Instrumentos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-contenido">
+            <span class="hero-etiqueta">🎶 Música en Vivo 🎶</span>
+            <h1>Tavo <span class="titulo-musical">Músico</span></h1>
+            <p class="hero-subtitulo">Multiinstrumentista · Versatilidad · Pasión por la música.</p>
+            <div class="hero-botones">
+                <a href="#contacto" class="btn btn-principal btn-magico">
+                    <i class="fa-regular fa-calendar"></i> Contratar Ahora
+                    <span class="chispa"></span>
+                </a>
+                <a href="#servicios" class="btn btn-secundario">
+                    Ver Servicios
+                </a>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
+
+        <div class="hero-scroll">
+            <span>DESCUBRE LA MÚSICA</span>
+            <i class="fa-solid fa-chevron-down"></i>
         </div>
     </section>
 
-    <!-- ==================== BIOGRAFÍA ==================== -->
-    <section id="biografia" class="biografia">
-        <div class="container">
-            <h2 class="section-title">Biografía</h2>
-            <div class="bio-grid">
-                <div class="bio-text">
+    <!-- =====================================
+         SOBRE MÍ - CON IMAGEN
+    ===================================== -->
+    <section id="sobre" class="sobre">
+        <div class="contenedor">
+            <div class="sobre-grid">
+                <div class="sobre-imagen">
+                    <div class="imagen-musico">
+                        <img src="img/1.webp" alt="Tavo Músico - Multiinstrumentista" loading="lazy">
+                        <div class="imagen-borde-musical"></div>
+                    </div>
+                </div>
+                <div class="sobre-texto">
+                    <span class="seccion-etiqueta">🎵 Sobre Mí</span>
+                    <h2>El Arte de la <span>Música</span></h2>
                     <p>
-                        <strong>Tavo Músico</strong> es un multiinstrumentista, cantante y compositor costarricense cuya
-                        trayectoria artística se ha desarrollado en diversos escenarios de Costa Rica y Centroamérica. A
-                        lo largo de los años ha participado en proyectos de diferentes géneros musicales, destacándose
-                        por su versatilidad, experiencia escénica y pasión por la música.
+                        Soy <strong>Tavo Músico</strong>, un multiinstrumentista apasionado que ha dedicado su vida a
+                        crear experiencias musicales inolvidables.
                     </p>
                     <p>
-                        Su formación musical incluye su paso por <strong>UCR Coral</strong>, donde integró la agrupación
-                        como cantante barítono, fortaleciendo sus conocimientos en interpretación vocal y trabajo coral.
+                        Con más de <strong>15 años</strong> de trayectoria, domino una amplia variedad de instrumentos
+                        que me permiten adaptarme a cualquier estilo y ocasión.
                     </p>
                     <p>
-                        Posteriormente formó parte de la banda <strong>Cuerda Floja</strong> como bajista, consolidando
-                        su experiencia en el escenario y participando en diversas presentaciones. Más adelante amplió su
-                        repertorio como <strong>multiinstrumentista</strong> en <strong>Tributo Acústico</strong>,
-                        proyecto en el que interpretó distintos instrumentos en formato acústico.
+                        Cada presentación es única, diseñada para conectar con el público y transmitir emociones a
+                        través de la música en su forma más pura.
                     </p>
+                    <div class="sobre-stats">
+                        <div class="stat stat-musical">
+                            <span class="numero" data-count="15">0</span>
+                            <span class="label">Años de experiencia</span>
+                        </div>
+                        <div class="stat stat-musical">
+                            <span class="numero" data-count="500">0</span>
+                            <span class="label">Eventos realizados</span>
+                        </div>
+                        <div class="stat stat-musical">
+                            <span class="numero" data-count="12">0</span>
+                            <span class="label">Instrumentos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================
+         INSTRUMENTOS
+    ===================================== -->
+    <section id="instrumentos" class="instrumentos">
+        <div class="contenedor">
+            <div class="titulo-seccion">
+                <span class="seccion-etiqueta">🎸 Instrumentos</span>
+                <h2>Mi <span>Colección</span></h2>
+                <p>Versatilidad musical en cada nota.</p>
+            </div>
+
+            <div class="instrumentos-grid">
+                <div class="instrumento-card card-musical">
+                    <div class="card-icon">🎸</div>
+                    <h3>Guitarra</h3>
+                    <p>Acústica, eléctrica y clásica. Versatilidad en todos los estilos.</p>
+                </div>
+
+                <div class="instrumento-card card-musical destacado">
+                    <div class="card-badge">★ Favorito</div>
+                    <div class="card-icon">🎹</div>
+                    <h3>Piano / Teclados</h3>
+                    <p>Armonías y melodías que envuelven el alma.</p>
+                </div>
+
+                <div class="instrumento-card card-musical">
+                    <div class="card-icon">🎻</div>
+                    <h3>Violín</h3>
+                    <p>Elegancia y expresividad en cada arco.</p>
+                </div>
+
+                <div class="instrumento-card card-musical">
+                    <div class="card-icon">🎷</div>
+                    <h3>Saxofón</h3>
+                    <p>Calidez y carácter para momentos especiales.</p>
+                </div>
+
+                <div class="instrumento-card card-musical">
+                    <div class="card-icon">🥁</div>
+                    <h3>Batería / Percusión</h3>
+                    <p>Ritmo y energía que hacen vibrar al público.</p>
+                </div>
+
+                <div class="instrumento-card card-musical">
+                    <div class="card-icon">🎤</div>
+                    <h3>Voz</h3>
+                    <p>El instrumento más personal y conectivo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================
+         SERVICIOS
+    ===================================== -->
+    <section id="servicios" class="servicios">
+        <div class="contenedor">
+            <div class="titulo-seccion">
+                <span class="seccion-etiqueta">🎶 Servicios</span>
+                <h2>Música para <span>toda ocasión</span></h2>
+                <p>Eventos · Conciertos · Sesiones · Clases</p>
+            </div>
+
+            <div class="servicios-grid">
+                <div class="servicio-card card-musical">
+                    <div class="card-icon">🎪</div>
+                    <h3>Eventos en Vivo</h3>
+                    <p>Bodas, fiestas, ceremonias y celebraciones. Música personalizada para tu momento especial.</p>
+                    <span class="card-duracion">⏱ Desde 1 hora</span>
+                </div>
+
+                <div class="servicio-card card-musical destacado">
+                    <div class="card-badge">★ Popular</div>
+                    <div class="card-icon">🎵</div>
+                    <h3>Conciertos</h3>
+                    <p>Shows completos con repertorio variado. Desde íntimos hasta multitudinarios.</p>
+                    <span class="card-duracion">⏱ 45-120 min</span>
+                </div>
+
+                <div class="servicio-card card-musical">
+                    <div class="card-icon">🎧</div>
+                    <h3>Sesiones de Estudio</h3>
+                    <p>Grabaciones profesionales para tus proyectos musicales. Multiinstrumentista a tu servicio.</p>
+                    <span class="card-duracion">⏱ Por proyecto</span>
+                </div>
+
+                <div class="servicio-card card-musical">
+                    <div class="card-icon">📚</div>
+                    <h3>Clases Particulares</h3>
+                    <p>Aprende música con un método personalizado. Todos los niveles y edades.</p>
+                    <span class="card-duracion">⏱ 60 min / clase</span>
+                </div>
+
+                <div class="servicio-card card-musical">
+                    <div class="card-icon">🎭</div>
+                    <h3>Dirección Musical</h3>
+                    <p>Dirección de bandas, coros y proyectos musicales. Arreglos y producción.</p>
+                    <span class="card-duracion">⏱ Personalizado</span>
+                </div>
+
+                <div class="servicio-card card-musical">
+                    <div class="card-icon">🌟</div>
+                    <h3>Eventos Especiales</h3>
+                    <p>¿Tienes una idea única? Creamos una experiencia musical a tu medida.</p>
+                    <span class="card-duracion">⏱ A consultar</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================
+         GALERÍA
+    ===================================== -->
+    <section id="galeria" class="galeria">
+        <div class="contenedor">
+            <div class="titulo-seccion">
+                <span class="seccion-etiqueta">📸 Galería</span>
+                <h2>Momentos <span>musicales</span></h2>
+                <p>Capturando la esencia de la música en vivo.</p>
+            </div>
+
+            <div class="galeria-grid">
+                <div class="galeria-item flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/2.webp" alt="Tavo Músico - En vivo" loading="lazy">
+                        </div>
+                        <div class="flip-back">
+                            <i class="fa-solid fa-music"></i>
+                            <span>🎵 En vivo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="galeria-item flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/3.webp" alt="Tavo Músico - Concierto" loading="lazy">
+                        </div>
+                        <div class="flip-back">
+                            <i class="fa-solid fa-music"></i>
+                            <span>🎵 Concierto</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="galeria-item flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/4.webp" alt="Tavo Músico - Multiinstrumentista" loading="lazy">
+                        </div>
+                        <div class="flip-back">
+                            <i class="fa-solid fa-music"></i>
+                            <span>🎵 Multiinstrumentista</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="galeria-item flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/5.webp" alt="Tavo Músico - En estudio" loading="lazy">
+                        </div>
+                        <div class="flip-back">
+                            <i class="fa-solid fa-music"></i>
+                            <span>🎵 En estudio</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="galeria-item flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/6.webp" alt="Tavo Músico - Evento" loading="lazy">
+                        </div>
+                        <div class="flip-back">
+                            <i class="fa-solid fa-music"></i>
+                            <span>🎵 Evento</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="galeria-item flip-card">
+                    <div class="flip-inner">
+                        <div class="flip-front">
+                            <img src="img/7.webp" alt="Tavo Músico - Presentación" loading="lazy">
+                        </div>
+                        <div class="flip-back">
+                            <i class="fa-solid fa-music"></i>
+                            <span>🎵 Presentación</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================
+         CONTACTO
+    ===================================== -->
+    <section id="contacto" class="contacto">
+        <div class="contenedor">
+            <div class="contacto-grid">
+                <div class="contacto-info">
+                    <span class="seccion-etiqueta">📞 Contacto</span>
+                    <h2>¿Listo para la <span>música</span>?</h2>
                     <p>
-                        Actualmente es bajista de las agrupaciones <strong>Los Hijos de Tencha</strong> y <strong>San
-                            Blas Punk Rock</strong>, combinando la energía de la cumbia y el punk rock con una propuesta
-                        musical auténtica. Además, participa en eventos privados como bajista, guitarrista y cantante,
-                        ofreciendo un repertorio adaptable a diferentes públicos y ocasiones.
+                        Contáctame para reservar tu evento, sesión o clase.
+                        La música te espera.
                     </p>
-                    <p>
-                        Su vocación también lo ha llevado a la enseñanza musical. Fue director de la banda rítmica de la
-                        <strong>Escuela de La Laguna de Paraíso, Cartago</strong>, y profesor de instrumentos en la
-                        <strong>Casa de la Cultura de Purral de Goicoechea</strong>, donde contribuyó a la formación
-                        musical de niños, jóvenes y adultos.
-                    </p>
-                    <p>
-                        Además de su carrera artística, Tavo Músico une su pasión por la música con la tecnología. Se
-                        dedica al diseño y desarrollo de páginas web, así como al mantenimiento y reparación de equipos
-                        de cómputo, redes informáticas y sistemas de videovigilancia (CCTV), aplicando la misma
-                        dedicación y creatividad que caracterizan su trabajo como músico.
-                    </p>
-                    <p>
-                        Con una trayectoria marcada por la disciplina, el aprendizaje constante y el compromiso con cada
-                        proyecto, Tavo Músico continúa creando, interpretando y llevando su música a nuevos escenarios,
-                        mientras desarrolla soluciones tecnológicas que complementan su visión profesional.
-                    </p>
-                    <div class="bio-links">
-                        <a href="https://linktr.ee/tavoramirezmusico" target="_blank" class="btn-link">
-                            <i class="fas fa-link"></i> linktr.ee/tavoramirezmusico
+
+                    <div class="contacto-detalles">
+                        <div class="detalle detalle-musical">
+                            <i class="fa-regular fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <span>tavo.musico@email.com</span>
+                            </div>
+                        </div>
+                        <div class="detalle detalle-musical">
+                            <i class="fa-regular fa-phone"></i>
+                            <div>
+                                <strong>Teléfono</strong>
+                                <span>+506 1234-5678</span>
+                            </div>
+                        </div>
+                        <div class="detalle detalle-musical">
+                            <i class="fa-regular fa-location-dot"></i>
+                            <div>
+                                <strong>Ubicación</strong>
+                                <span>San José, Costa Rica</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contacto-redes">
+                        <a href="#" target="_blank" class="red-social" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" target="_blank" class="red-social" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank" class="red-social" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="#" target="_blank" class="red-social" aria-label="TikTok">
+                            <i class="fa-brands fa-tiktok"></i>
                         </a>
                     </div>
                 </div>
-                <div class="bio-instrumentos">
-                    <h3>Instrumentos</h3>
-                    <div class="instrumentos-grid">
-                        <div class="instrumento">
-                            <i class="fas fa-guitar"></i>
-                            <span>Bajo Eléctrico</span>
+
+                <div class="contacto-formulario">
+                    <form id="contactForm">
+                        <div class="form-group form-musical">
+                            <input type="text" id="nombre" placeholder="Tu nombre" required>
                         </div>
-                        <div class="instrumento">
-                            <i class="fas fa-guitar"></i>
-                            <span>Guitarra</span>
+                        <div class="form-group form-musical">
+                            <input type="email" id="email" placeholder="Tu correo electrónico" required>
                         </div>
-                        <div class="instrumento">
-                            <i class="fas fa-microphone"></i>
-                            <span>Canto</span>
+                        <div class="form-group form-musical">
+                            <input type="text" id="telefono" placeholder="Tu teléfono">
                         </div>
-                        <div class="instrumento">
-                            <i class="fas fa-music"></i>
-                            <span>Multiinstrumentista</span>
+                        <div class="form-group form-musical">
+                            <select id="servicio">
+                                <option value="">Tipo de servicio</option>
+                                <option value="evento">Evento en vivo</option>
+                                <option value="concierto">Concierto</option>
+                                <option value="estudio">Sesión de estudio</option>
+                                <option value="clases">Clases particulares</option>
+                                <option value="direccion">Dirección musical</option>
+                                <option value="otro">Otro</option>
+                            </select>
                         </div>
-                    </div>
-                    <div class="bio-proyectos">
-                        <h3>Proyectos</h3>
-                        <ul class="proyectos-list">
-                            <li><i class="fas fa-music"></i> Los Hijos de Tencha</li>
-                            <li><i class="fas fa-music"></i> San Blas Punk Rock</li>
-                            <li><i class="fas fa-music"></i> Tributo Acústico</li>
-                            <li><i class="fas fa-music"></i> Cuerda Floja</li>
-                            <li><i class="fas fa-music"></i> UCR Coral</li>
-                        </ul>
-                    </div>
+                        <div class="form-group form-musical">
+                            <textarea id="mensaje" placeholder="Cuéntame sobre tu evento o proyecto..."
+                                rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-principal btn-full btn-magico">
+                            <i class="fa-regular fa-paper-plane"></i> Enviar Mensaje
+                            <span class="chispa"></span>
+                        </button>
+                    </form>
+                    <div id="formMensaje" class="form-mensaje"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ==================== FOTOS ==================== -->
-    <section id="fotos" class="fotos">
-        <div class="container">
-            <h2 class="section-title">Galería</h2>
-            <p class="section-subtitle">Mis momentos sobre el escenario</p>
-            <div class="grid-fotos" id="gridFotos">
-                <!-- Generado con JS desde 1.webp a 9.webp -->
+    <!-- =====================================
+         FOOTER
+    ===================================== -->
+    <footer>
+        <div class="contenedor">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">🎵</span>
+                    <span class="logo-text">Tavo <strong>Músico</strong></span>
+                    <p>Multiinstrumentista · Música en vivo.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#sobre">Sobre Mí</a>
+                    <a href="#instrumentos">Instrumentos</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#galeria">Galería</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ==================== LIGHTBOX ==================== -->
-    <div class="lightbox" id="lightbox">
-        <span class="lightbox-close" id="lightboxClose">&times;</span>
-        <img class="lightbox-img" id="lightboxImg" src="" alt="" />
-        <span class="lightbox-prev" id="lightboxPrev">&#10094;</span>
-        <span class="lightbox-next" id="lightboxNext">&#10095;</span>
-    </div>
-
-    <!-- ==================== VIDEOS ==================== -->
-    <section id="videos" class="videos">
-        <div class="container">
-            <h2 class="section-title">Videos</h2>
-            <p class="section-subtitle">Próximamente más contenido audiovisual</p>
-            <div class="video-placeholder">
-                <i class="fas fa-video"></i>
-                <p>Espacio para tus videos y reels</p>
-                <span>¡Pronto más contenido!</span>
+            <div class="footer-bottom">
+                <p>© 2026 Tavo Músico. Todos los derechos reservados.</p>
+                <p class="credito">Diseñado por <a href="#" target="_blank">Tavo Músico</a></p>
             </div>
-        </div>
-    </section>
-
-    <!-- ==================== SOUNDCLOUD ==================== -->
-    <section id="soundcloud" class="soundcloud">
-        <div class="container">
-            <h2 class="section-title">SoundCloud</h2>
-            <p class="section-subtitle">Escucha mi música</p>
-            <div class="soundcloud-wrapper">
-                <a href="https://soundcloud.com/tavo-ramirez-110581398" target="_blank" class="soundcloud-link">
-                    <i class="fab fa-soundcloud"></i>
-                    <span>Escuchar en SoundCloud</span>
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== CONTACTO ==================== -->
-    <section id="contacto" class="contacto">
-        <div class="container">
-            <h2 class="section-title">Contacto</h2>
-            <div class="contacto-grid">
-                <a href="mailto:tavoramirezmusico@gmail.com" class="contacto-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>tavoramirezmusico@gmail.com</span>
-                </a>
-                <a href="https://wa.me/50671012511" target="_blank" class="contacto-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>+506 7101-2511</span>
-                </a>
-                <a href="https://linktr.ee/tavoramirezmusico" target="_blank" class="contacto-item">
-                    <i class="fas fa-link"></i>
-                    <span>linktr.ee/tavoramirezmusico</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 TAVOMUSICO · Multiinstrumentista. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <!-- ==================== SCRIPTS ==================== -->
+    <!-- =====================================
+         BOTÓN SUBIR
+    ===================================== -->
+    <button id="subir" class="btn-subir" aria-label="Volver arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- =====================================
+         SCRIPTS
+    ===================================== -->
     <script src="js/script.js"></script>
+
 </body>
 
 </html>
